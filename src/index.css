@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  @apply bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-blue-100 font-sans min-h-screen;
+}
+
+/* Navbar styling */
+nav {
+  @apply bg-blue-950 shadow-md py-4;
+}
+
+nav ul {
+  @apply flex justify-center space-x-10;
+}
+
+nav a {
+  @apply text-blue-300 hover:text-blue-400 text-lg font-semibold transition-colors duration-300;
+}
+
+/* Section container */
+section {
+  @apply bg-blue-900 bg-opacity-80 rounded-xl p-12 m-6 max-w-5xl mx-auto shadow-lg;
+}
+
+/* Project cards */
+.project-card {
+  @apply bg-blue-800 bg-opacity-60 rounded-lg p-6 shadow-md transition-transform duration-300;
+}
+
+.project-card:hover {
+  @apply transform -translate-y-1 shadow-xl;
+}
+
+/* Headings */
+h2 {
+  @apply text-4xl font-bold text-center text-blue-400 mb-10;
+}
+
+h3 {
+  @apply text-xl font-semibold text-blue-300 mb-2;
+}
+
+/* Buttons */
+button, .btn {
+  @apply bg-gradient-to-r from-blue-600 to-blue-400 text-white py-3 px-7 rounded-md font-semibold cursor-pointer transition duration-300 shadow-lg;
+}
+
+button:hover, .btn:hover {
+  @apply bg-gradient-to-r from-blue-700 to-blue-500 shadow-xl;
 }
